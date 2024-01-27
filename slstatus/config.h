@@ -12,6 +12,9 @@ static const char unknown_str[] = "n/a";
 /*
  * function            description                     argument (example)
  *
+ * backlight_perc      backlight percentage            device name
+ *                                                     (intel_backlight)
+ *                                                     NULL on OpenBSD
  * battery_perc        battery percentage              battery name (BAT0)
  *                                                     NULL on OpenBSD/FreeBSD
  * battery_remaining   battery remaining HH:MM         battery name (BAT0)
@@ -71,7 +74,8 @@ static const struct arg args[] = {
 	{ wifi_perc, "%s%% ", "wlp2s0" },
   //{ run_command, " 󰕾 %s%% ", "/bin/sh -c \"amixer get Master | tail -n1 | grep -Po '\\[\\K[^%]*' | head -n1\"" },	
   { alsa_master_vol, "󰕾 %s",NULL},
-  { run_command, "   %s ","/bin/sh -c \"brightnessctl g\""},
+  //{ run_command, "   %s ","/bin/sh -c \"brightnessctl g\""},
+  { backlight_perc, "   %s ", "amdgpu_bl1"},
 	{ cpu_perc, "  %s%% "  , NULL    },
-	{ datetime, "%s"          , "%F %T" },
+	{ datetime, "%s",           "%F %T" },
 };
