@@ -76,6 +76,7 @@ static const struct arg args[] = {
   { alsa_master_vol, "󰕾 %s",NULL},
   //{ run_command, "   %s ","/bin/sh -c \"brightnessctl g\""},
   { backlight_perc, "   %s ", "amdgpu_bl1"},
-	{ cpu_perc, "  %s%% "  , NULL    },
+  { ram_used, " 󰍛 %s", "NULL"},
+	{ cpu_perc, " 󰻠 %s%% "  , NULL    },
 	{ datetime, "%s",           "%F %T" },
 };
